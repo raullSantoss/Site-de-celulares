@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMobile - Premium Phones</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>TechMobile</h1>
+            <div class="brand-filter">
+                <button class="filter-btn active" data-brand="all">Todos</button>
+                <button class="filter-btn" data-brand="apple">Apple</button>
+                <button class="filter-btn" data-brand="samsung">Samsung</button>
+                <button class="filter-btn" data-brand="xiaomi">Xiaomi</button>
+            </div>
+            <div class="cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-counter">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>Os Melhores Smartphones do Mercado</h2>
+    </div>
+    
+    <div class="container">
+        <!-- Apple Products -->
+        <div class="product-card" data-brand="apple">
+            <div class="brand-tag apple-tag">Apple</div>
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRI9CSMn_F-YzcV_klLnZwaa6gxYbpBqCw7kYb_H9NVcUSO3cr8XK8mKmM9FfCUZx4wddcwc_wazg0YYOJJrwPrybjz0Dl5XapN6Gh4idAtqhy0QHkk7QhwGQHPRPb5jPTzFhpiNyI&usqp=CAc" class="product-image" alt="iPhone 15 Pro">
+            <h3>iPhone 15 Pro Max</h3>
+            <p class="price">R$ 9.999</p>
+            <p>Chip A17 Pro, 256GB, Câmera 48MP</p>
+            <a href="https://www.apple.com/br/iphone-16-pro/" class="buy-button" onclick="addToCart()">
+                <i class="fas fa-cart-plus"></i>
+                Comprar
+            </a>
+        </div>
+
+        <!-- Samsung Products -->
+        <div class="product-card" data-brand="samsung">
+            <div class="brand-tag samsung-tag">Samsung</div>
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSVJ67H47wEwzjf0RxeVBF37Gr5c2Gst2WRDm_Sr8rxA7oBpx7w26a-YY4sgK9ll4mPIrj56ljwUpF5n2n61Zkbrol3I0d1Z0NMzF-9QQDBW77FuAOUCehYYHaj-KwRjGTiaMFUacw&usqp=CAc" class="product-image" alt="Galaxy S23 Ultra">
+            <h3>Galaxy S23 Ultra</h3>
+            <p class="price">R$ 8.499</p>
+            <p>S Pen Integrado, 200MP, Snapdragon 8 Gen 2</p>
+            <a href="https://www.samsung.com/br/smartphones/galaxy-s/galaxy-s23-ultra-green-512gb-sm-s918bzguzto/" class="buy-button" onclick="addToCart()">
+                <i class="fas fa-cart-plus"></i>
+                Comprar
+            </a>
+        </div>
+
+        <!-- Xiaomi Products -->
+        <div class="product-card" data-brand="xiaomi">
+            <div class="brand-tag xiaomi-tag">Xiaomi</div>
+            <img src="data:image/jpeg;base64,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">
+            <h3>Xiaomi 13 Pro</h3>
+            <p class="price">R$ 6.999</p>
+            <p>Leica Camera, 120W HyperCharge, Snapdragon 8 Gen 2</p>
+            <a href="https://www.mibrasil.com.br/smartphone-redmi-note-13-pro-5g-br-tela-6-67-8gb-256gb-preto-cx390pre-prin-p5239" class="buy-button" onclick="addToCart()">
+                <i class="fas fa-cart-plus"></i>
+                Comprar
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Filtragem de produtos
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const products = document.querySelectorAll('.product-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const brand = button.dataset.brand;
+                
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                products.forEach(product => {
+                    if(brand === 'all' || product.dataset.brand === brand) {
+                        product.style.display = 'block';
+                        setTimeout(() => product.style.opacity = '1', 10);
+                    } else {
+                        product.style.opacity = '0';
+                        setTimeout(() => product.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        // Carrinho de compras
+        let cartCount = 0;
+        const cartCounter = document.querySelector('.cart-counter');
+
+        function addToCart() {
+            cartCount++;
+            cartCounter.textContent = cartCount;
+            cartCounter.style.animation = 'scaleUp 0.3s';
+            setTimeout(() => cartCounter.style.animation = '', 300);
+        }
+
+        // Efeito de hover dinâmico
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const x = e.pageX - card.offsetLeft;
+                const y = e.pageY - card.offsetTop;
+
+                card.style.transform = `
+                    perspective(1000px)
+                    rotateX(${(y - card.offsetHeight/2) / 10}deg)
+                    rotateY(${-(x - card.offsetWidth/2) / 10}deg)
+                    translateY(-10px)
+                `;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
